@@ -17,7 +17,7 @@ const Cart = () => {
         <section className='py-4 container'>
             <div className='row justify-content-center'>
                 <div className='col-12'>
-                    <h5 style={{ color: "blue" }}>Cart ({totalUniqueItems}) Total Items :({totalItems})</h5>
+                    <h5 style={{ backgroundColor: "#2874f0", width: "" }}>Cart : {totalUniqueItems} Total Items : {totalItems}</h5>
                     <table className='table table-light table-hover m-0'>
                         <tbody>
                             {
@@ -27,15 +27,16 @@ const Cart = () => {
                                         <tr key={index}>
                                             <td>
                                                 <img src={item.img} style={{ height: '6rem' }} />
-
-                                                <td className='col-8'>{item.price}</td>
-                                                Quantity ({item.quantity})
-                                                <td className='col-8'>
-                                                    <button className='btn btn-info ms-2' onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
-                                                    <button className='btn btn-info ms-2' onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
-                                                    <button className='btn btn-danger ms-2' onClick={() => { removeItem(item.id) }}>Remove Item</button>
-                                                </td>
                                             </td>
+
+                                            <td className='col-8' style={{ fontWeight: 'bold' }}>{item.price}</td>
+                                            <td style={{ fontWeight: 'bold' }}>Quantity {item.quantity}</td>
+                                            <td className='col-8'>
+                                                <button className='btn btn-info ms-2' onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
+                                                <button className='btn btn-info ms-2' onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
+                                                <button className='btn btn-danger ms-2' onClick={() => { removeItem(item.id) }}>Remove Item</button>
+                                            </td>
+
                                         </tr>)
                                 })
                             }

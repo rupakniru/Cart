@@ -5,12 +5,12 @@ const Itemcart = (props) => {
     return (
         <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>
             <div class="card p-0 overflow-hidden h-100 shadow" >
-                <img src={props.img} class="card-img-top img-fluid" />
+                <img src={props.item.color} class="card-img-top img-fluid" />
                 <div class="card-body text-center">
-                    <h5 class="card-title">Title :{props.title}</h5>
-                    <h5 class="card-text">Rupees :{props.price}</h5>
-                    <h5 class="card-text">Desc :{props.desc}</h5>
-                    <button class="btn btn-success" onClick={() => addItem(props.item)}>Add to Cart</button>
+                    <h5 class="card-title">Title :{props.item.title}</h5>
+                    <h5 class="card-text">Rupees :{props.item.price}</h5>
+                    <h5 class="card-text">Desc :{props.item.desc}</h5>
+                    <button class="btn btn-success" onClick={() => addItem({ id: props.item.productId, price: props.item.price, title: props.item.productName, desc: props.item.specification, img: props.item.color })}>Add to Cart</button>
                 </div>
             </div>
         </div>

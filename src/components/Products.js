@@ -8,30 +8,26 @@ class Product extends React.Component {
             users: []
         }
     }
+
     componentDidMount() {
         ProductService.getProducts().then((response) => {
             this.setState({ users: response.data })
+            console.log(response.data.productName);
         });
     }
     render() {
+        console.log(this.state.users);
+
         return (
             this.state.users.map((item, index) => {
                 return (
                     <Itemcart
-
-                        img={item.color}
-                        price={item.price}
-                        title={item.productName}
-                        productId={item.productId}
-                        dimensions={item.dimension}
-                        desc={item.specification}
-                        manufacturer={item.manufacturer}
-                        quantity={item.quantity}
-                        id={item.id}
                         item={item}
                         key={index}
                     />
+
                 )
+
             })
 
         )

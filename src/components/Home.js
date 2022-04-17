@@ -9,15 +9,11 @@ const Home = (props) => {
     return (
 
         <>
-            <h1 className='text-center mt-3'>All Items</h1>
+            <h1 className='text-center mt-3' style={{ backgroundColor: '#2874f0' }}> Products</h1>
             <section className='pu-4 container'>
                 <div className='row justify-content-center'>
-                    {/* <Product /> */}
-                    {data.productData.map((item, index) => {
-                        return (
-                            <Itemcart img={item.img} title={item.title} desc={item.desc} price={item.price} item={item} key={index} />
-                        )
-                    })}
+                    <Product />
+
 
                 </div>
             </section>
